@@ -1,3 +1,4 @@
+"use client"
 import '../style/FlightSearch.css'
 
 export default function FlightSearch() {

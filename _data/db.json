@@ -1,14 +1,14 @@
 {
     "users": [
       {
-        "id": 2,
+        "id": 1,
         "name": "Mathew Mesfin",
-        "password": "123456"
+        "age": 25
       },
       {
-        "id": 1,
+        "id": 2,
         "name": "Jane Smith",
-        "password": "123456"
+        "age": 22
       }
     ]
 }
