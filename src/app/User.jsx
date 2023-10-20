@@ -15,7 +15,7 @@ export default async function Users() {
         {users.map((user) => (
             <div key={user.id}>
                 <h1>{user.name}</h1>
-                <p>{user.password}</p>
+                <p>{user.age}</p>
             </div>
             )
         )}
