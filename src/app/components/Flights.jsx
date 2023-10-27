@@ -4,8 +4,8 @@ import { useSearchParams } from "next/navigation"
 var Amadeus = require('amadeus');
 
 var amadeus = new Amadeus({
-  clientId: process.env.AMADEUS_CLIENT_ID,
-  clientSecret: process.env.AMADEUS_CLIENT_SECRET
+  clientId: process.env.NEXT_PUBLIC_AMADEUS_CLIENT_ID,
+  clientSecret: process.env.NEXT_PUBLIC_AMADEUS_CLIENT_SECRET
 });
 
 export default function Flights() {
