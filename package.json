@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "amadeus": "^9.0.0",
     "autoprefixer": "10.4.16",
     "eslint": "8.51.0",
     "eslint-config-next": "13.5.6",

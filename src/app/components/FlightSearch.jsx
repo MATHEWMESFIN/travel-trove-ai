@@ -1,45 +1,88 @@
 "use client"
 import '../style/FlightSearch.css'
+import React, { useState } from 'react';
 
 export default function FlightSearch() {
+
+    const [originLocationCode, setOriginLocationCode] = useState('');
+    const [destinationLocationCode, setDestinationLocationCode] = useState('');
+    const [departureDate, setDepartureDate] = useState('');
+    const [returnDate, setReturnDate] = useState('');
+    const [adults, setAdults] = useState('1');
+    const [children, setChildren] = useState('0');
+    const [infants, setInfants] = useState('0');
+    const [cabin, setCabin] = useState('ECONOMY');
+    const [currency, setCurrency] = useState('USD');
+    const [maxPrice, setMaxPrice] = useState('');
+
     return (
         <div className="container">
-            <div className="card custom-bg w-75 p-4 d-flex">
+            <div>
                 <div className="row">
-                    <div className="pb-3 h3 text-left">Flight Search &#128747;</div>
+                    <div className="flight-search">Flight Search &#128747;</div>
                 </div>
-                <form id="flight-form" onSubmit="return validateForm()">
+                <form className="flight-form">
                     <div className="row">
-                        <div className="form-group col-md align-items-start flex-column">
-                            <label htmlFor="origin" className="d-inline-flex">From</label>
-                            <input type="text" placeholder="City or Airport" className="form-control" id="origin" name="origin"
-                                required></input>
+                        <div className="form-group">
+                            <label className="label">From</label>
+                            <input 
+                                type="text" 
+                                placeholder="Airport" 
+                                className="form-control" 
+                                required="required"
+                                name="originLocationCode"
+                                value={originLocationCode}
+                                onChange={(e) => setOriginLocationCode(e.target.value)}
+                            />
                         </div>
-                        <div className="form-group col-md align-items-start flex-column">
-                            <label htmlFor="depart" className="d-inline-flex">To</label>
-                            <input type="text" placeholder="City or Airport" className="form-control" id="depart" name="depart"
-                                required></input>
+                        <div className="form-group">
+                            <label className="label">To</label>
+                            <input 
+                                type="text" 
+                                placeholder="Airport" 
+                                className="form-control"
+                                required="required"
+                                name="destinationLocationCode"
+                                value={destinationLocationCode}
+                                onChange={(e) => setDestinationLocationCode(e.target.value)}
+                            />
                         </div>
                     </div>
                     <div className="row">
-                        <div className="form-group col-md align-items-start flex-column">
-                            <label htmlFor="departure-date" className=" d-inline-flex">Depart</label>
-                            <input type="date" className="form-control" id="departure-date" name="departure-date"
-                                onClick="return false" required></input>
+                        <div className="form-group">
+                            <label className="label">Depart</label>
+                            <input 
+                                type="date" 
+                                placeholder="mm/dd/yyyy"
+                                className="form-control"
+                                required="required"
+                                name="departureDate"
+                                value={departureDate}
+                                onChange={(e) => setDepartureDate(e.target.value)}
+                            />
                         </div>
-                        <div className="form-group col-md align-items-start flex-column">
-                            <label htmlFor="return-date" className="d-inline-flex">Return</label>
-                            <input type="date" placeholder="One way" value=""
-                                onChange="this.setAttribute('value', this.value)" className="form-control" id="return-date"
-                                name="return-date"></input>
+                        <div className="form-group">
+                            <label className="label">Return</label>
+                            <input 
+                                type="date" 
+                                placeholder="One way" 
+                                className="form-control"
+                                name="returnDate"
+                                value={returnDate}
+                                onChange={(e) => setReturnDate(e.target.value)}
+                            />
                         </div>
                     </div>
                     <div className="row">
-                        <div className="form-group col-lg-3 align-items-start flex-column">
-                            <label htmlFor="adults" className="d-inline-flex col-auto">Adults <span className="sublabel"> 12+
-                                </span></label>
-                            <select className="form-select" id="adults"
-                                onChange="javascript: dynamicDropDown(this.options[this.selectedIndex].value);">
+                        <div className="form-group">
+                            <label className="label">Adults 
+                                <span className="sublabel"> 18+ </span>
+                            </label>
+                            <select className="form-select"
+                                name="adults"
+                                value={adults}
+                                onChange={(e) => setAdults(e.target.value)}
+                            >
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
@@ -51,10 +94,15 @@ export default function FlightSearch() {
                                 <option value="9">9</option>
                             </select>
                         </div>
-                        <div className="form-group col-lg-3 align-items-start flex-column">
-                            <label htmlFor="children" className="d-inline-flex col-auto">Children <span className="sublabel"> 2-11
-                                </span></label>
-                            <select className="form-select" id="children">
+                        <div className="form-group">
+                            <label className="label">Children 
+                                <span className="sublabel"> 2-17 </span>
+                            </label>
+                            <select className="form-select" id="children"
+                                name="children"
+                                value={children}
+                                onChange={(e) => setChildren(e.target.value)}
+                            >
                                 <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -66,38 +114,69 @@ export default function FlightSearch() {
                                 <option value="8">8</option>
                             </select>
                         </div>
-                        <div className="form-group col-lg-3 align-items-start flex-column">
-                            <label htmlFor="infants" className="d-inline-flex col-auto">Infants <span className="sublabel"> less than
-                                    2</span></label>
-                            <select className="form-select" id="infants">
+                        <div className="form-group">
+                            <label className="label">Infants 
+                                <span className="sublabel"> less than 2 </span>
+                            </label>
+                            <select className="form-select"
+                                name="infants"
+                                value={infants}
+                                onChange={(e) => setInfants(e.target.value)}
+                            >
                                 <option value="0">0</option>
                                 <option value="1">1</option>
                             </select>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="form-group col-lg-6 align-items-start flex-column">
-                            <label htmlFor="cabin" className="d-inline-flex">Cabin</label>
-                            <select className="form-select" id="cabin">
+                        <div className="form-group">
+                            <label className="label">Cabin</label>
+                            <select className="form-select" id="cabin"
+                                name="cabin"
+                                value={cabin}
+                                onChange={(e) => setCabin(e.target.value)}
+                            >
                                 <option value="ECONOMY">Economy</option>
                                 <option value="PREMIUM_ECONOMY">Premium Economy</option>
                                 <option value="BUSINESS">Business</option>
                                 <option value="FIRST">First</option>
                             </select>
                         </div>
-                        <div className="form-group col-lg-6 align-items-start flex-column pt-lg-4">
+                        <div className="form-group">
                             <div className="form-check form-switch">
-                                <input className="form-check-input align-self-center" type="checkbox" id="directFlights"></input>
-                                <label className="form-check-label d-inline-flex align-self-center" htmlFor="directFlights">Direct
+                                <input className="form-check-input align-self-center" type="checkbox" id="directFlights"/>
+                                <label className="form-check-label d-inline-flex align-self-center">Direct
                                     flights</label>
                             </div>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="text-left col-auto">
-                            <button type="submit" className="btn btn-primary">Search flights</button>
+                        <div className="form-group">
+                            <label className="label">Currency</label>
+                            <select className="form-select" id="currency"
+                                name="currency"
+                                value={currency}
+                                onChange={(e) => setCurrency(e.target.value)}
+                            >
+                                <option value="USD">USD</option>
+                                <option value="CAD">CAD</option>
+                                <option value="EUR">EUR</option>
+                                <option value="GBP">GBP</option>
+                            </select>
+                        </div>
+                        <div className="form-group">
+                            <label className="label">Max Price</label>
+                            <input 
+                                type="number" 
+                                placeholder={currency} 
+                                className="form-control"
+                                name="maxPrice"
+                                value={maxPrice}
+                                onChange={(e) => setMaxPrice(e.target.value)}
+                            />
                         </div>
                     </div>
+                    <button type="submit">Search flights</button>
                 </form>
             </div>
         </div>

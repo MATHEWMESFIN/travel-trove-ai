@@ -1,12 +1,15 @@
+import { Suspense } from "react"
 import FlightSearch from "./components/FlightSearch"
-import Users from "./user"
+import Flights from "./components/Flights"
 
 export default function Home() {
+
   return (
     <main>
-      <Users />
-      <h2>Dashboard</h2>
       <FlightSearch />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Flights />
+      </Suspense>
     </main>
   )
 }
