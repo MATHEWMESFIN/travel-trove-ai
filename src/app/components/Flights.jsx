@@ -27,25 +27,27 @@ export default function Flights() {
     validSearch = false;
   }
 
-  var res = "Invalid Search";
+  var searchResult;
   if (validSearch) {
-    res = amadeus.shopping.flightOffersSearch.get({
-      originLocationCode: originLocationCode,
-      destinationLocationCode: destinationLocationCode,
-      departureDate: departureDate,
-      adults: adults
-    }).then(function (response) {
-      console.log(response);
-      return JSON.stringify(response.data);   //=> The data attribute taken from the result
-    }).catch(function (response) {
-      console.error(response);
-    });
-  }
+    searchResult = amadeus.shopping.flightOffersSearch.get({
+        originLocationCode: originLocationCode,
+        destinationLocationCode: destinationLocationCode,
+        departureDate: departureDate,
+        adults: adults
+      }).then(function (response) {
+        console.log(response.data);
+        return (response.data);
+      }).catch(function (responseError) {
+        console.log(responseError);
+      });
 
-  return (
-    <div>
-        <h1>Flights</h1>
-        <p>{res}</p>
-    </div>
-  )
+    return (
+      <div>
+          <h1>Flights</h1>
+          <div>
+            {searchResult}
+          </div>
+      </div>
+    )
+  }
 }
