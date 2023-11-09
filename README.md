@@ -2,14 +2,6 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-To run the json:
-
-```bash
-npm run json
-```
-
-Open [http://localhost:4000](http://localhost:4000) with your browser to see the data
-
 To run the development server:
 
 ```bash
