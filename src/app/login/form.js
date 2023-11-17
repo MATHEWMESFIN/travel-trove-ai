@@ -17,7 +17,9 @@ export default function Form() {
           redirect: false
         });
 
-        if (!response.error) {
+        if ((await response).error) {
+          console.log(response.error);
+        } else {
           router.push('/');
           router.refresh();
         } 
