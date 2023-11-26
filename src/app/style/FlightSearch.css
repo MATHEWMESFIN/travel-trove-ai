@@ -1,4 +1,4 @@
-.container {
+.search-container {
   display: flex;
   width: 100%;
   align-items: center;
@@ -31,10 +31,10 @@
   }
   
   label {
-    width: 100px;
+    width: 5em;
     text-align: right;
-    margin-right: 5px;
-    margin-left: 5px;
+    margin-right: .5em;
+    margin-left: .5em;
   }
 
   .sublabel {
@@ -55,8 +55,8 @@
 
   button[type="submit"] {
     padding: 10px 20px;
-    background-color: #0050A0;
-    border: none;
+    background-color: lightblue;
+    border: solid 1px black;
     cursor: pointer;
   }
   
