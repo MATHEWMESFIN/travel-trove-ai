@@ -1,0 +1,21 @@
+.flights-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 15px;
+
+}
+
+.flight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+    margin: 15px 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+}

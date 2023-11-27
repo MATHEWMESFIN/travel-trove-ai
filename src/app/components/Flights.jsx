@@ -1,5 +1,6 @@
 'use client'
 import { useSearchParams } from "next/navigation"
+import '../style/Flights.css'
 
 var Amadeus = require('amadeus');
 
@@ -35,8 +36,21 @@ export default function Flights() {
         departureDate: departureDate,
         adults: adults
       }).then(function (response) {
-        console.log(response.data);
-        return (response.data);
+        // return a display of the flight results
+        return (
+          <div>
+            <div className="flights-list">
+              {response.data.map((flight) => (
+                <div className="flight">
+                  <h2>{flight.itineraries[0].segments[0].departure.iataCode} to {flight.itineraries[0].segments[0].arrival.iataCode}</h2>
+                  <h3>Departure: {flight.itineraries[0].segments[0].departure.at}</h3>
+                  <h3>Arrival: {flight.itineraries[0].segments[0].arrival.at}</h3>
+                  <h3>Price: {flight.price.grandTotal}</h3>
+                </div>
+              ))}
+            </div>
+          </div>
+        )
       }).catch(function (responseError) {
         console.log(responseError);
       });
