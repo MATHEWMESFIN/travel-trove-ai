@@ -1,7 +1,6 @@
 "use client"
 import '../style/FlightSearch.css'
 import React, { useState } from 'react';
-import { useSession } from 'next-auth/react'
 import Chat from './Chat'
 
 export default function FlightSearch() {
