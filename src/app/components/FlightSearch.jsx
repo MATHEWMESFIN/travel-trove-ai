@@ -2,6 +2,7 @@
 import '../style/FlightSearch.css'
 import React, { useState } from 'react';
 import { useSession } from 'next-auth/react'
+import Chat from './Chat'
 
 export default function FlightSearch() {
 
@@ -17,11 +18,12 @@ export default function FlightSearch() {
     const [maxPrice, setMaxPrice] = useState('');
 
     return (
-        <div className="container">
+        <div className="search-container">
             <div>
                 <div className="row">
                     <div className="flight-search">Flight Search &#128747;</div>
                 </div>
+                <Chat />
                 <form className="flight-form">
                     <div className="row">
                         <div className="form-group">
