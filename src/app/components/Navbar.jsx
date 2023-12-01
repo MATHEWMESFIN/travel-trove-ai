@@ -5,7 +5,7 @@ import Logout from "./Logout";
 export default async function Navbar({ session }) {
     return (
         <header>
-            <div className="container">
+            <div className="nav-container">
                 <Link href="/">
                     <h1>TravelTroveAI</h1>
                 </Link>
@@ -24,6 +24,9 @@ export default async function Navbar({ session }) {
                         <Logout />
                     </Link>
                 )}
+                <Link href="/language">
+                    <h1>Language</h1>
+                </Link>
                 <Link href="/about-us">
                     <h1>About</h1>
                 </Link>

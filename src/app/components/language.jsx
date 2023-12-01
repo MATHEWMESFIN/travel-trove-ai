@@ -1,9 +1,10 @@
+'use client'
 import React, { useState, useEffect } from 'react';
-import '../style/ls.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faVolumeUp, faCopy, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
+import '../style/lt.css'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faVolumeUp, faCopy, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 
-function App() {
+function Language() {
   const [fromText, setFromText] = useState('');
   const [toText, setToText] = useState('');
   const [selectedLanguages, setSelectedLanguages] = useState(['en-GB', 'es-ES']);
@@ -174,7 +175,7 @@ function App() {
         <ul className="controls">
           <li className="row from">
             <div className="icons">
-              <FontAwesomeIcon
+              {/* <FontAwesomeIcon
                 icon={faVolumeUp}
                 id="from"
                 onClick={() => handleCopyOrSpeak('from')}
@@ -183,7 +184,7 @@ function App() {
                 icon={faCopy}
                 id="from"
                 onClick={() => handleCopyOrSpeak('from')}
-              />
+              /> */}
             </div>
             <select
               value={selectedLanguages[0]}
@@ -199,7 +200,7 @@ function App() {
             </select>
           </li>
           <li className="exchange" onClick={handleExchange}>
-            <FontAwesomeIcon icon={faExchangeAlt} />
+            {/* <FontAwesomeIcon icon={faExchangeAlt} /> */}
           </li>
           <li className="row to">
             <select
@@ -215,7 +216,7 @@ function App() {
               ))}
             </select>
             <div className="icons">
-              <FontAwesomeIcon
+              {/* <FontAwesomeIcon
                 icon={faVolumeUp}
                 id="to"
                 onClick={() => handleCopyOrSpeak('to')}
@@ -224,7 +225,7 @@ function App() {
                 icon={faCopy}
                 id="to"
                 onClick={() => handleCopyOrSpeak('to')}
-              />
+              /> */}
             </div>
           </li>
         </ul>
@@ -234,4 +235,4 @@ function App() {
   );
 }
 
-export default App;
+export default Language;

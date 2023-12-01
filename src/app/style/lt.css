@@ -4,14 +4,7 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
   }
-  body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 10px;
-    min-height: 100vh;
-    background: #3f4b79;
-  }
+  
   .container{
     max-width: 690px;
     width: 100%;
@@ -20,7 +13,7 @@
     border-radius: 7px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.01);
     position: relative;
-    top: -60px; /* Move the container up by 20 pixels */
+    top: -0px; /* Move the container up by 20 pixels */
     
   }
   .wrapper{
