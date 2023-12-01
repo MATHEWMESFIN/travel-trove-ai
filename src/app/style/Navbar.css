@@ -17,3 +17,18 @@ header a {
   color: #333;
   text-decoration: none;
 }
+
+.nav-content, .login-register-logout {
+  display: flex;
+  align-items: center;
+}
+
+.nav-content h1, .login-register-logout h1{
+  padding: .5em;
+  margin-right: 1em;
+}
+
+.nav-content h1:hover, .login-register-logout h1:hover {
+  background-color: lightblue;
+}
+

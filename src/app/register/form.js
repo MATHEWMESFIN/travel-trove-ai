@@ -1,13 +1,21 @@
 'use client'
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Form() {
 
     const [ registerEmail, setRegisterEmail ] = useState('');
     const [ registerPassword, setRegisterPassword ] = useState('');
+    const [ confirmPassword, setConfirmPassword ] = useState('');
+
+    const router = useRouter();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (registerPassword !== confirmPassword) {
+            alert("Passwords do not match");
+            return;
+        }
         const account = { registerEmail, registerPassword };
         const response = await fetch('/api/auth/register', {
         method: 'POST',
@@ -17,6 +25,14 @@ export default function Form() {
             password: account.registerPassword
         })
         });
+
+        if ((await response).ok === false) {
+          // display a message to the user
+          alert("User already exists");
+        } else if ((await response).ok === true) {
+          router.push('/');
+          router.refresh();
+        } 
     }
     return (
         <div>
@@ -37,6 +53,14 @@ export default function Form() {
               placeholder="Password"
               value={registerPassword}
               onChange={e => setRegisterPassword(e.target.value)} />
+
+            <input
+              type="password"
+              required
+              name="Password" 
+              placeholder="Confirm Password"
+              value={confirmPassword}
+              onChange={e => setConfirmPassword(e.target.value)} />
   
             <button type="submit">Register</button>
           </form>

@@ -18,7 +18,8 @@ export default function Form() {
         });
 
         if ((await response).error) {
-          console.log(response.error);
+          // display a message to the user
+          alert("Login failed");
         } else {
           router.push('/');
           router.refresh();
