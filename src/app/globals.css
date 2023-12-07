@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.full_page{
+    background-image: linear-gradient(90deg,#0f52ba ,#fecc98);
+
+}
 input, select {
     border: 1px solid #ccc;
 }
@@ -17,6 +21,7 @@ button[type="submit"] {
     background-color: lightblue;
     border: solid 1px black;
     cursor: pointer;
+    
 }
 
 input[type="date"] {
@@ -35,10 +40,12 @@ input[type="date"]:before {
     pointer-events: none;
     line-height: 1.5;
     padding: 10px 0.5rem 0 0.5rem;
+    
 }
 
 input[type="date"]:focus:before,
 input[type="date"]:not([value=""]):before
 {
     display: none;
+    
 }

@@ -16,7 +16,7 @@ export default async function language() {
       )
     } else if (session) {
       return (
-        <main>
+        <main className="full_page">
             <Language />
         </main>
       )
