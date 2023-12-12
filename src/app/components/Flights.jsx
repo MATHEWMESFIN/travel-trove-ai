@@ -37,15 +37,27 @@ export default function Flights() {
         adults: adults
       }).then(function (response) {
         // return a display of the flight results
+
+        // a function that loops through the segments of the flight and returns the final destination
+        function getDestination(flight) {
+          var destination = flight.itineraries[0].segments[0].arrival.iataCode;
+          for (var i = 0; i < flight.itineraries[0].segments.length; i++) {
+            if (i === flight.itineraries[0].segments.length - 1) {
+              destination = flight.itineraries[0].segments[i].arrival;
+            }
+          }
+          return destination;
+        }
+        
         return (
           <div>
             <div className="flights-list">
               {response.data.map((flight) => (
                 <div className="flight">
-                  <h2>{flight.itineraries[0].segments[0].departure.iataCode} to {flight.itineraries[0].segments[0].arrival.iataCode}</h2>
+                  <h2>{flight.itineraries[0].segments[0].departure.iataCode} to {getDestination(flight).iataCode}</h2>
                   <h3>Departure: {flight.itineraries[0].segments[0].departure.at}</h3>
-                  <h3>Arrival: {flight.itineraries[0].segments[0].arrival.at}</h3>
-                  <h3>Price: {flight.price.grandTotal}</h3>
+                  <h3>Arrival: {getDestination(flight).at}</h3>
+                  <h3>Price: {flight.price.grandTotal} {flight.price.currency}</h3>
                 </div>
               ))}
             </div>

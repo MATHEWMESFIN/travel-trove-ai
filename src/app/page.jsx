@@ -20,10 +20,12 @@ export default async function Home() {
   } else if (session) {
     return (
       <main>
+        <div className="full_page">
         <FlightSearch />
         <Suspense fallback={<div>Loading...</div>}>
           <Flights />
         </Suspense>
+        </div>
       </main>
     )
   }

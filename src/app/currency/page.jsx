@@ -1,5 +1,5 @@
 import { getServerSession } from 'next-auth'
-import Language from "../components/Language"
+import Currency from "../components/currency"
 import Link from "next/link"
 
 export default async function language() {
@@ -17,7 +17,7 @@ export default async function language() {
   } else if (session) {
     return (
       <main className="full_page">
-          <Language />
+          <Currency />
       </main>
     )
   }
