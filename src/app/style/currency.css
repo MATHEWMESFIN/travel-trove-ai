@@ -62,7 +62,7 @@ select {
 
 .converter-body #result {
   font-size: 18px;
-  margin-top: 15px; /* Increased margin for spacing */
-  color: #333;
+  margin: 15px; /* Increased margin for spacing */
+  color: black;
 }
 
