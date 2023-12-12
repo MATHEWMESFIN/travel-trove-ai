@@ -3,7 +3,7 @@ body {
   margin: 0;
 }
 header {
-  background: #fff;
+  background: rgb(159, 159, 159);
 }
 header .nav-container {
   max-width: 1400px;

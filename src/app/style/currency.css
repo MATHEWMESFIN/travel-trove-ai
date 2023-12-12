@@ -1,16 +1,14 @@
-body {
+.converter-body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #06a2f8; /* Updated background color */
 }
 
 #converter {
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
   width: 300px;
-  margin: 50px auto;
+  margin: auto;
   padding: 20px;
   text-align: center;
   transition: transform 0.3s ease-in-out; /* Added a smooth transition effect */
@@ -20,7 +18,7 @@ body {
   transform: scale(1.05); /* Zoom in a bit on hover */
 }
 
-h1 {
+.converter-body h1 {
   color: #333;
   margin-bottom: 20px; /* Added margin for spacing */
 }
@@ -30,13 +28,13 @@ h1 {
   margin-bottom: 20px; /* Increased margin for spacing */
 }
 
-label {
+.converter-body label {
   display: block;
   margin-bottom: 8px; /* Slightly reduced margin */
   color: #555;
 }
 
-input,
+.converter-body input,
 select {
   padding: 10px;
   font-size: 16px;
@@ -46,7 +44,7 @@ select {
   border-radius: 4px;
 }
 
-button {
+.converter-body button {
   background-color: #3498db;
   color: #fff;
   padding: 12px;
@@ -58,11 +56,11 @@ button {
   transition: background-color 0.3s ease-in-out; /* Added a smooth transition effect */
 }
 
-button:hover {
+.converter-body button:hover {
   background-color: #2980b9;
 }
 
-#result {
+.converter-body #result {
   font-size: 18px;
   margin-top: 15px; /* Increased margin for spacing */
   color: #333;

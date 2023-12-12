@@ -13,6 +13,9 @@ export default async function Navbar({ session }) {
                     <Link href="/language">
                         <h1>Language</h1>
                     </Link>
+                    <Link href="/currency">
+                        <h1>Currency</h1>
+                    </Link>
                     <Link href="/about-us">
                         <h1>About</h1>
                     </Link>
