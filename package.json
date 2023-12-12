@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-brands-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@vercel/postgres": "^0.5.1",
     "ai": "^2.2.24",
     "amadeus": "^9.0.0",
@@ -17,6 +20,7 @@
     "dotenv": "^16.3.1",
     "eslint": "8.51.0",
     "eslint-config-next": "13.5.6",
+    "ionicons": "^7.2.1",
     "json-server": "^0.17.4",
     "next": "13.5.6",
     "next-auth": "^4.24.4",

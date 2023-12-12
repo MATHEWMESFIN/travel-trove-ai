@@ -4,6 +4,7 @@ import Flights from "./components/Flights"
 import { getServerSession } from 'next-auth'
 import Link from "next/link"
 
+
 export default async function Home() {
 
   const session = await getServerSession();
