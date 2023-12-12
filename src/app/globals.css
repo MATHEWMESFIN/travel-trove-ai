@@ -49,11 +49,3 @@ input[type="date"]:not([value=""]):before
     display: none;
     
 }
-
-.fa-icon-small svg {
-    color: #1870f3;
-    width:50px;  /* Set the width of the SVG icon */
-    height: 50px; /* Set the height of the SVG icon */
-  }
-
-
