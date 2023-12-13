@@ -6,6 +6,93 @@
     background-image: linear-gradient(90deg,#0f52ba ,#fecc98);
 
 }
+
+.go-to-login-btn {
+    padding: 10px 20px;
+    background-color: lightblue;
+    border: solid 1px black;
+    border-radius: 1vh;
+    cursor: pointer;
+    margin: 10px;
+}
+.login_page {
+    background-image: linear-gradient(90deg,#0f52ba ,#fecc98);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+
+        .input {
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+        }
+    }
+}
+.register-page {
+    background-image: linear-gradient(90deg,#0f52ba ,#fecc98);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .register-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+
+        .input {
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+        }
+    }
+}
+.about-us-page {
+    background-image: linear-gradient(90deg,#0f52ba ,#fecc98);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20vh;
+
+    .about-us-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+
+        .input {
+            padding: 10px;
+            margin: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+        }
+    }
+}
 input, select {
     border: 1px solid #ccc;
 }
@@ -20,6 +107,7 @@ button[type="submit"] {
     padding: 10px 20px;
     background-color: lightblue;
     border: solid 1px black;
+    border-radius: 1vh;
     cursor: pointer;
     
 }
@@ -54,4 +142,5 @@ input[type="date"]:not([value=""]):before
     color: #1870f3;
     width:50px;
     height: 50px;
+    display: flex;
   }

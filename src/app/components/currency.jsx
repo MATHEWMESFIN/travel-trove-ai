@@ -59,7 +59,7 @@ const CurrencyConverter = () => {
     };
 
     return (
-        <div className='converter-body'>
+        <div className='converter-page'>
             <div id="converter">
                 <h1>Currency Converter</h1>
                 <div className="input-container">

@@ -17,8 +17,8 @@ export default function FlightSearch() {
     const [maxPrice, setMaxPrice] = useState('');
 
     return (
-        <div className="search-container">
-            <div>
+        <div className="flight-search-page">
+            <div className='flight-search-form'>
                 <div className="row">
                     <div className="flight-search">Flight Search &#128747;</div>
                 </div>
@@ -67,67 +67,13 @@ export default function FlightSearch() {
                             <label className="label">Return</label>
                             <input 
                                 type="date" 
-                                placeholder="One way" 
+                                placeholder="mm/dd/yyyy" 
                                 className="form-control"
+                                required="required"
                                 name="returnDate"
                                 value={returnDate}
                                 onChange={(e) => setReturnDate(e.target.value)}
                             />
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="form-group">
-                            <label className="label">Adults 
-                                <span className="sublabel"> 18+ </span>
-                            </label>
-                            <select className="form-select"
-                                name="adults"
-                                value={adults}
-                                onChange={(e) => setAdults(e.target.value)}
-                            >
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                            </select>
-                        </div>
-                        <div className="form-group">
-                            <label className="label">Children 
-                                <span className="sublabel"> 2-17 </span>
-                            </label>
-                            <select className="form-select" id="children"
-                                name="children"
-                                value={children}
-                                onChange={(e) => setChildren(e.target.value)}
-                            >
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                            </select>
-                        </div>
-                        <div className="form-group">
-                            <label className="label">Infants 
-                                <span className="sublabel"> less than 2 </span>
-                            </label>
-                            <select className="form-select"
-                                name="infants"
-                                value={infants}
-                                onChange={(e) => setInfants(e.target.value)}
-                            >
-                                <option value="0">0</option>
-                                <option value="1">1</option>
-                            </select>
                         </div>
                     </div>
                     <div className="row">
@@ -172,6 +118,7 @@ export default function FlightSearch() {
                                 type="number" 
                                 placeholder={currency} 
                                 className="form-control"
+                                required="required"
                                 name="maxPrice"
                                 value={maxPrice}
                                 onChange={(e) => setMaxPrice(e.target.value)}

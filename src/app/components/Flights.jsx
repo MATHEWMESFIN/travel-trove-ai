@@ -17,9 +17,6 @@ export default function Flights() {
   const destinationLocationCode = searchParams.get('destinationLocationCode');
   const departureDate = searchParams.get('departureDate');
   const returnDate = searchParams.get('returnDate');
-  const adults = searchParams.get('adults')
-  const children = searchParams.get('children')
-  const infants = searchParams.get('infants')
   const cabin = searchParams.get('cabin')
   const currency = searchParams.get('currency')
   const maxPrice = searchParams.get('maxPrice');
@@ -34,7 +31,11 @@ export default function Flights() {
         originLocationCode: originLocationCode,
         destinationLocationCode: destinationLocationCode,
         departureDate: departureDate,
-        adults: adults
+        returnDate: returnDate,
+        adults: 1,
+        travelClass: cabin,
+        currencyCode: currency,
+        maxPrice: maxPrice
       }).then(function (response) {
         // return a display of the flight results
 
@@ -58,6 +59,7 @@ export default function Flights() {
                   <h3>Departure: {flight.itineraries[0].segments[0].departure.at}</h3>
                   <h3>Arrival: {getDestination(flight).at}</h3>
                   <h3>Price: {flight.price.grandTotal} {flight.price.currency}</h3>
+                  <button className="book-flight-btn">Book Flight</button>
                 </div>
               ))}
             </div>
@@ -69,7 +71,6 @@ export default function Flights() {
 
     return (
       <div>
-          <h1>Flights</h1>
           <div>
             {searchResult}
           </div>

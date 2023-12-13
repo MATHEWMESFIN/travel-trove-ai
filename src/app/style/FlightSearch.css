@@ -1,15 +1,27 @@
-.search-container {
-    width: 100%;
-    padding: 30px;
-    margin: 0 auto;
-    background-color: #fff;
-
+.flight-search-page {
+  background-image: linear-gradient(90deg,#0f52ba ,#fecc98);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.flight-search-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
 }
 .flight-search {
   font-size: 25px;
   display: flex;
   justify-content: center;
   margin: 20px;
+  border: none;
 }
 
 .flight-form {
@@ -21,7 +33,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid #ccc;
+  align-items: center;
+  margin: 1vh;
 }
 .form-group {
     display: flex;

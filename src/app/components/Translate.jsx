@@ -1,8 +1,9 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import '../style/lt.css'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faVolumeUp, faCopy, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
+import '../style/language.css';
+import { FaVolumeUp } from "react-icons/fa";
+import { FaCopy } from "react-icons/fa";
+import { FaExchangeAlt } from "react-icons/fa";
 
 function Language() {
   const [fromText, setFromText] = useState('');
@@ -138,23 +139,21 @@ function Language() {
       });
   };
 
-  const handleCopyOrSpeak = (targetId) => {
+  const handleCopy = (targetId) => {
     const textToUse = targetId === 'from' ? fromText : toText;
+    navigator.clipboard.writeText(textToUse);
+  }
 
-    if (!textToUse) return;
-
-    if (targetId === 'from') {
-      navigator.clipboard.writeText(textToUse);
-    } else {
-      let utterance = new SpeechSynthesisUtterance(textToUse);
-      utterance.lang = selectedLanguages[targetId === 'from' ? 0 : 1];
-      speechSynthesis.speak(utterance);
-    }
-  };
+  const handleSpeak = (targetId) => {
+    const textToUse = targetId === 'from' ? fromText : toText;
+    let utterance = new SpeechSynthesisUtterance(textToUse);
+    utterance.lang = selectedLanguages[targetId === 'from' ? 0 : 1];
+    speechSynthesis.speak(utterance);
+  }
 
   return (
-    <div className="container">
-      <div className="wrapper">
+    <div className="language-page">
+      <div className="language-form">
         <div className="text-input">
           <textarea
             spellCheck="false"
@@ -174,18 +173,6 @@ function Language() {
         </div>
         <ul className="controls">
           <li className="row from">
-            <div className="icons">
-              {/* <FontAwesomeIcon
-                icon={faVolumeUp}
-                id="from"
-                onClick={() => handleCopyOrSpeak('from')}
-              />
-              <FontAwesomeIcon
-                icon={faCopy}
-                id="from"
-                onClick={() => handleCopyOrSpeak('from')}
-              /> */}
-            </div>
             <select
               value={selectedLanguages[0]}
               onChange={(e) =>
@@ -198,9 +185,19 @@ function Language() {
                 </option>
               ))}
             </select>
+            <div className="icons">
+              <FaVolumeUp
+                id="from"
+                onClick={() => handleSpeak('from')}
+              />
+              <FaCopy
+                id="from"
+                onClick={() => handleCopy('from')}
+              />
+            </div>
           </li>
           <li className="exchange" onClick={handleExchange}>
-            {/* <FontAwesomeIcon icon={faExchangeAlt} /> */}
+            <FaExchangeAlt/>
           </li>
           <li className="row to">
             <select
@@ -216,21 +213,19 @@ function Language() {
               ))}
             </select>
             <div className="icons">
-              {/* <FontAwesomeIcon
-                icon={faVolumeUp}
+              <FaVolumeUp
                 id="to"
-                onClick={() => handleCopyOrSpeak('to')}
+                onClick={() => handleSpeak('to')}
               />
-              <FontAwesomeIcon
-                icon={faCopy}
+              <FaCopy
                 id="to"
-                onClick={() => handleCopyOrSpeak('to')}
-              /> */}
+                onClick={() => handleCopy('to')}
+              />
             </div>
           </li>
         </ul>
+        <button onClick={handleTranslation}>Translate Text</button>
       </div>
-      <button onClick={handleTranslation}>Translate Text</button>
     </div>
   );
 }

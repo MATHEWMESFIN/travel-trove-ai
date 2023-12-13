@@ -35,10 +35,11 @@ export default function Form() {
         } 
     }
     return (
-        <div>
-          <h1>Register</h1>
-          <form onSubmit={handleSubmit}>
+        <div className="register-page">
+          <form onSubmit={handleSubmit} className="register-form">
+            <h1>Register</h1>
             <input 
+              className="input"
               type="email" 
               required
               name="Email" 
@@ -47,6 +48,7 @@ export default function Form() {
               onChange={e => setRegisterEmail(e.target.value)} />
   
             <input 
+              className="input"
               type="password" 
               required
               name="Password" 
@@ -55,6 +57,7 @@ export default function Form() {
               onChange={e => setRegisterPassword(e.target.value)} />
 
             <input
+              className="input"
               type="password"
               required
               name="Password" 

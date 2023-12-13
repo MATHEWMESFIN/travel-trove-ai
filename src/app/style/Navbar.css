@@ -3,7 +3,7 @@ body {
   margin: 0;
 }
 header {
-  background: rgb(159, 159, 159);
+  background: #fff;
 }
 header .nav-container {
   max-width: 1400px;
@@ -26,6 +26,7 @@ header a {
 .nav-content h1, .login-register-logout h1{
   padding: .5em;
   margin-right: 1em;
+  border-radius: 1vh;
 }
 
 .nav-content h1:hover, .login-register-logout h1:hover {

@@ -1,5 +1,5 @@
 import { getServerSession } from 'next-auth'
-import Language from "../components/Language"
+import Language from "../components/Translate"
 import Link from "next/link"
 
 export default async function language() {
@@ -8,9 +8,9 @@ export default async function language() {
 
   if (!session) {
     return (
-      <main>
+      <main className="full_page">
         <Link href="/login">
-          <h1> Click Here to login </h1>
+          <button className="go-to-login-btn">Click Here to login</button>
         </Link>
       </main>
     )

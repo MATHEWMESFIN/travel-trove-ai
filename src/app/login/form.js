@@ -26,10 +26,11 @@ export default function Form() {
         } 
     }
     return (
-        <div>
-          <h1>Login</h1>
-          <form onSubmit={handleSubmit}>
+        <div className="login_page">
+          <form onSubmit={handleSubmit} className="login-form">
+            <h1>Login</h1>
             <input 
+              className='input'
               type="email" 
               required
               name="Email" 
@@ -38,6 +39,7 @@ export default function Form() {
               onChange={e => setLoginEmail(e.target.value)} />
   
             <input 
+              className='input'
               type="password" 
               required
               name="Password" 

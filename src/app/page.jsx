@@ -11,9 +11,9 @@ export default async function Home() {
 
   if (!session) {
     return (
-      <main>
+      <main className="full_page">
         <Link href="/login">
-          <h1> Click Here to login </h1>
+          <button className="go-to-login-btn">Click Here to login</button>
         </Link>
       </main>
     )
