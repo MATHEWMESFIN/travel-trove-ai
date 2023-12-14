@@ -37,10 +37,10 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Feature Manual
 
-To search and book flights enter the required search criteria and press the search flights button
+ - To search and book flights enter the required search criteria and press the search flights button
 <img width="554" alt="image" src="https://github.com/COSC-412-group-7/travel-trove-ai/assets/104221232/a1d7907b-a865-4f68-aa93-167305c9bd4d">
 
-The search results should pop up below the search field like this
+ - The search results should pop up below the search field like this
 <img width="554" alt="image" src="https://github.com/COSC-412-group-7/travel-trove-ai/assets/104221232/471d13ec-8f3f-4c9e-920d-4c6e996f543a">
 
  - To translate a language in the language page select your language with the drop down and type what you want translated
