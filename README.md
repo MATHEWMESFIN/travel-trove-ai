@@ -16,13 +16,22 @@ npm run dev
 
 To use the flight search API:
 
- - Create an account with developers.amadeus.com
- - Go to "My Self-Service Workspace
+ - Create an account with [https://developers.amadeus.com](https://developers.amadeus.com)
+ - Go to "My Self-Service Workspace"
  - Create a new app
  - Give it any name
  - Click Create
  - Copy and paste the API Key into your own .env file under "NEXT_PUBLIC_AMADEUS_CLIENT_ID"
  - Copy and paster the API Secret into your own .env file under "NEXT_PUBLIC_AMADEUS_CLIENT_SECRET"
+
+To use the ChatBox:
+
+ - Create an account with [https://platform.openai.com/](https://platform.openai.com/)
+ - Go to "API keys"
+ - Create a new secret key
+ - Give it any name
+ - Click create secret key
+ - Copy and paste the new secret key into your own .env file under "OPENAI_API_KEY"
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
