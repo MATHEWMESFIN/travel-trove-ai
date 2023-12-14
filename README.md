@@ -1,6 +1,6 @@
 ## Project Report
 
-[Final Project Report .pdf](https://github.com/COSC-412-group-7/travel-trove-ai/files/13668390/Final.Project.Report.pdf)
+[Final Project Report .pdf](https://github.com/COSC-412-group-7/travel-trove-ai/files/13676863/Final.Project.Report.pdf)
 
 ## Project PowerPoint
 
