@@ -9,9 +9,6 @@ export default function FlightSearch() {
     const [destinationLocationCode, setDestinationLocationCode] = useState('');
     const [departureDate, setDepartureDate] = useState('');
     const [returnDate, setReturnDate] = useState('');
-    const [adults, setAdults] = useState('1');
-    const [children, setChildren] = useState('0');
-    const [infants, setInfants] = useState('0');
     const [cabin, setCabin] = useState('ECONOMY');
     const [currency, setCurrency] = useState('USD');
     const [maxPrice, setMaxPrice] = useState('');

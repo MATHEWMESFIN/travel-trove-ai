@@ -49,22 +49,34 @@ export default function Flights() {
           }
           return destination;
         }
-        
-        return (
-          <div>
+
+        if (response.data.length === 0) {
+          return (
             <div className="flights-list">
-              {response.data.map((flight) => (
-                <div className="flight">
-                  <h2>{flight.itineraries[0].segments[0].departure.iataCode} to {getDestination(flight).iataCode}</h2>
-                  <h3>Departure: {flight.itineraries[0].segments[0].departure.at}</h3>
-                  <h3>Arrival: {getDestination(flight).at}</h3>
-                  <h3>Price: {flight.price.grandTotal} {flight.price.currency}</h3>
-                  <button className="book-flight-btn">Book Flight</button>
-                </div>
-              ))}
+              <div className="flight">
+              <h1>No flights found</h1>
+              </div>
             </div>
-          </div>
-        )
+          )
+        } else {
+          return (
+            <div>
+  
+              <div className="flights-list">
+              {response.data.map((flight) => (
+                  <div className="flight">
+                    <h2>{flight.itineraries[0].segments[0].departure.iataCode} to {getDestination(flight).iataCode}</h2>
+                    <h3>Departure: {flight.itineraries[0].segments[0].departure.at}</h3>
+                    <h3>Arrival: {getDestination(flight).at}</h3>
+                    <h3>Price: {flight.price.grandTotal} {flight.price.currency}</h3>
+                    <button className="book-flight-btn">Book Flight</button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )
+        
+        }
       }).catch(function (responseError) {
         console.log(responseError);
       });
