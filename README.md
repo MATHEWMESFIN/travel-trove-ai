@@ -2,17 +2,29 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+To install dependencies:
+
+```bash
+npm install
+```
+
 To run the development server:
 
 ```bash
 npm run dev
 ```
 
+To use the flight search API:
+
+ - Create an account with developers.amadeus.com
+ - Go to "My Self-Service Workspace
+ - Create a new app
+ - Give it any name
+ - Click Create
+ - Copy and paste the API Key into your own .env file under "NEXT_PUBLIC_AMADEUS_CLIENT_ID"
+ - Copy and paster the API Secret into your own .env file under "NEXT_PUBLIC_AMADEUS_CLIENT_SECRET"
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
 ## Learn More
 
